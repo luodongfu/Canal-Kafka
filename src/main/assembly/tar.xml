@@ -1,5 +1,5 @@
 <assembly>
-	<id>dist</id>
+	<id>canal-client</id>
 	<formats>
 		<format>tar.gz</format>
 	</formats>
@@ -21,13 +21,6 @@
 			<fileMode>0755</fileMode>
 		</fileSet>
 		<fileSet>
-			<directory>./src/main/conf</directory>
-			<outputDirectory>/conf</outputDirectory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-		<fileSet>
 			<directory>./src/main/resources</directory>
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
@@ -41,13 +34,22 @@
 				<exclude>**/*</exclude>
 			</excludes>
 		</fileSet>
-	</fileSets>
-	<dependencySets>
-		<dependencySet>
+		<fileSet>
+			<directory>target/lib</directory>
 			<outputDirectory>lib</outputDirectory>
-			<excludes>
-				<exclude>junit:junit</exclude>
-			</excludes>
-		</dependencySet>
-	</dependencySets>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>lib</outputDirectory>
+			<includes>
+				<include>**.jar</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+	</fileSets>
 </assembly>
+
